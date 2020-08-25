@@ -9,7 +9,10 @@
   },
   "schedule": [
     {
-      "operation": "fieldstats_elasticlogs_q-*",
+      "operation": {
+       "operation-type": "fieldstats_elasticlogs_q-*",
+       "ignore_throttled": false
+      },
       "iterations": 1,
       "clients": 4
     },
@@ -20,19 +23,31 @@
         "clients": 4,
         "tasks": [
           {
-            "operation": "relative-kibana-content_issues-dashboard_50%",
+            "operation": {
+              "operation-type": "relative-kibana-content_issues-dashboard_50%",
+              "ignore_throttled": false
+            },
             "target-interval": 30
           },
           {
-            "operation": "relative-kibana-content_issues-dashboard_75%",
+            "operation": {
+              "operation-type": "relative-kibana-content_issues-dashboard_75%",
+              "ignore_throttled": false
+            },
             "target-interval": 90
           },
           {
-            "operation": "relative-kibana-traffic-dashboard_50%",
+            "operation": {
+              "operation-type":"relative-kibana-traffic-dashboard_50%",
+              "ignore_throttled": false
+            },
             "target-interval": 40
           },
           {
-            "operation": "relative-kibana-discover_50%",
+            "operation": {
+              "operation-type":"relative-kibana-discover_50%",
+              "ignore_throttled": false
+            },
             "target-interval": 60
           }
         ]
