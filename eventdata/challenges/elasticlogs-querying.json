@@ -10,7 +10,8 @@
   "schedule": [
     {
       "operation": {
-       "operation-type": "fieldstats_elasticlogs_q-*",
+       "operation-type": "fieldstats",
+       "index_pattern": "elasticlogs*",
        "ignore_throttled": false
       },
       "iterations": 1,
@@ -23,31 +24,19 @@
         "clients": 4,
         "tasks": [
           {
-            "operation": {
-              "operation-type": "relative-kibana-content_issues-dashboard_50%",
-              "ignore_throttled": false
-            },
+            "operation": "relative-kibana-content_issues-dashboard_50%",
             "target-interval": 30
           },
           {
-            "operation": {
-              "operation-type": "relative-kibana-content_issues-dashboard_75%",
-              "ignore_throttled": false
-            },
+            "operation": "relative-kibana-content_issues-dashboard_75%",
             "target-interval": 90
           },
           {
-            "operation": {
-              "operation-type":"relative-kibana-traffic-dashboard_50%",
-              "ignore_throttled": false
-            },
+            "operation": "relative-kibana-traffic-dashboard_50%",
             "target-interval": 40
           },
           {
-            "operation": {
-              "operation-type":"relative-kibana-discover_50%",
-              "ignore_throttled": false
-            },
+            "operation": "relative-kibana-discover_50%",
             "target-interval": 60
           }
         ]
